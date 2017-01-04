@@ -11,9 +11,7 @@ const Calendar = ({timeslots, events, defaultDate, defaultView, dateFormat, onSe
             selectable
             timeslots={timeslots}
             events={events}
-            defaultDate={defaultDate}
             defaultView={defaultView}
-            dateFormat={dateFormat}
             onSelectEvent={onSelectEvent}
             onSelectSlot={onSelectSlot}
             culture='en-US'

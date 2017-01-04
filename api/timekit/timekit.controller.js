@@ -2,6 +2,7 @@
 
 // SERVICES
 import TimeKitService from './timekit.service';
+import moment from 'moment';
 
 class TimeKitController {
 
@@ -37,27 +38,6 @@ class TimeKitController {
         const start = '2016-12-26 08:00:00'; //ToDo: move to a param
         const end = '2016-12-28 18:00:00'; //ToDo: move to a param
 
-
-        const eventsHardcoded = [ //ToDo: remove it from here
-            {
-                'title': 'All Day Event',
-                'allDay': true,
-                'start': new Date(2015, 3, 0),
-                'end': new Date(2015, 3, 0)
-            },
-            {
-                'title': 'Long Event',
-                'start': new Date(2015, 3, 7),
-                'end': new Date(2015, 3, 10)
-            },
-
-            {
-                'title': 'TEST EVENT',
-                'start': new Date(2017, 0, 2, 18, 0, 0),
-                'end': new Date(2017, 0, 2, 19, 0, 0)
-            }
-        ];
-
         TimeKitService.authUser(email, password, (err, authResponse) => {
             if (err) return res.status(200).json(err);
 
@@ -66,12 +46,9 @@ class TimeKitController {
 
                 events.forEach((event, key) => {
                     event.title = event.what;
-                    // console.log(event);
                 });
 
-
-                return res.status(200).json(eventsHardcoded);
-                // return res.status(200).json(events);
+                return res.status(200).json(events);
             });
         });
     }

@@ -6,7 +6,7 @@ const Header = () => {
         <nav className="navbar navbar-default">
             <div className="container">
                 <div className="navbar-header">
-                    <IndexLink to="/" activeClassName="navbar-brand" className="navbar-brand"><i className="glyphicon glyphicon-check" /> MKS Blog</IndexLink>
+                    <IndexLink to="/" activeClassName="navbar-brand" className="navbar-brand"><i className="glyphicon glyphicon-calendar" /> TimeKit Calendar</IndexLink>
                 </div>
                 <ul className="nav navbar-nav">
                     <li>

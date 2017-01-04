@@ -14,7 +14,7 @@ const Calendar = ({timeslots, events, defaultDate, defaultView, dateFormat, onSe
             defaultView={defaultView}
             onSelectEvent={onSelectEvent}
             onSelectSlot={onSelectSlot}
-            culture='en-US'
+            culture="en-US"
         />
     );
 };
@@ -28,6 +28,7 @@ Calendar.defaultProps = {
 Calendar.propTypes = {
     timeslots: PropTypes.number,
     defaultDate: PropTypes.object,
+    defaultView: PropTypes.string,
     events: PropTypes.array.isRequired,
     dateFormat: PropTypes.string,
     onSelectEvent: PropTypes.func,

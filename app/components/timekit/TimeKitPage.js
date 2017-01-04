@@ -11,25 +11,27 @@ class TimeKitPage extends React.Component {
         this.onSelectSlot = this.onSelectSlot.bind(this);
         this.onSelectEvent = this.onSelectEvent.bind(this);
 
-        const email = 'jcook@makingsense.com'; //ToDo: check this to use it from other place
-        const password = 'jpc1988090601'; //ToDo: check this to use it from other place
+        //ToDo: these params will come from the logged user maybe
+        const email = '';
+        const password = '';
 
         this.props.actions.loadEvents(email, password);
     }
 
     onSelectSlot(slotInfo){
+        //ToDo: create event modal
         alert(
             `selected slot: \n\nstart ${slotInfo.start.toLocaleString()} ` +
             `\nend: ${slotInfo.end.toLocaleString()}`
-        )
+        );
     }
 
     onSelectEvent(event){
+        //ToDo: event info modal
         alert(event.title);
     }
 
     render() {
-        console.log(this.props.events);
         return (
             <div>
 
@@ -45,7 +47,8 @@ class TimeKitPage extends React.Component {
 }
 
 TimeKitPage.propTypes = {
-    actions: PropTypes.object.isRequired
+    actions: PropTypes.object.isRequired,
+    events: PropTypes.array.isRequired
 };
 
 function mapStatesToProps(state, ownProps) {

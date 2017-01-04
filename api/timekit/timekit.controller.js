@@ -33,8 +33,8 @@ class TimeKitController {
     }
 
     getEvents(req, res, next){
-        const email = req.query.email;
-        const password = req.query.password;
+        const email = req.query.email || process.env.email; //Now getting the email from env_variables if not set
+        const password = req.query.password || process.env.password; //Now getting the email from env_variables if not set
         const start = '2016-12-26 08:00:00'; //ToDo: move to a param
         const end = '2016-12-28 18:00:00'; //ToDo: move to a param
 
